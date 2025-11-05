@@ -34,7 +34,7 @@ function Stars() {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="w-full bg-[#0a0b10] py-20 text-white md:py-24">
+    <section id="testimonials" className="w-full bg-[#0A0A0A] py-20 text-white md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-3xl font-semibold text-transparent md:text-4xl">
@@ -49,14 +49,15 @@ export default function Testimonials() {
               key={idx}
               className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur transition hover:bg-white/[0.05]"
             >
+              <div className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.45),transparent_60%)] blur-xl" />
               <Stars />
-              <p className="mt-4 text-sm text-white/80">“{t.quote}”</p>
+              <p className="mt-4 text-sm italic text-white/85">“{t.quote}”</p>
               <div className="mt-6 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-white">{t.name}</p>
                   <p className="text-xs text-white/60">{t.role}</p>
                 </div>
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-lime-400 to-emerald-500 opacity-70" />
+                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#6A0DAD] to-[#8B5CF6] opacity-80 shadow-[0_0_40px_rgba(139,92,246,0.35)]" />
               </div>
             </div>
           ))}

@@ -7,12 +7,7 @@ const tiers = [
     price: 'Free',
     period: '',
     highlight: false,
-    features: [
-      '1 document / day',
-      'AI summary',
-      'Basic risk flags',
-      'Email export',
-    ],
+    features: ['1 document / day', 'AI summary', 'Basic risk flags', 'Email export'],
   },
   {
     name: 'Pro',
@@ -26,6 +21,13 @@ const tiers = [
       'Priority processing',
       'Slack/Notion export',
     ],
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    period: '',
+    highlight: false,
+    features: ['SSO & SCIM', 'Audit logs', 'Dedicated support', 'On-prem options'],
   },
 ];
 
@@ -71,7 +73,7 @@ function FAQItem({ q, a }) {
 
 export default function PricingFAQ() {
   return (
-    <section className="w-full bg-[#0b0c12] py-20 text-white md:py-28">
+    <section id="pricing" className="w-full bg-[#121212] py-20 text-white md:py-28">
       <div className="mx-auto max-w-7xl px-6">
         {/* Pricing */}
         <div className="mx-auto max-w-2xl text-center">
@@ -81,16 +83,18 @@ export default function PricingFAQ() {
           <p className="mt-3 text-white/70">Start free, upgrade when you need more power.</p>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
           {tiers.map((tier) => (
             <div
               key={tier.name}
               className={`relative rounded-2xl border bg-white/[0.03] p-6 backdrop-blur transition ${
-                tier.highlight ? 'border-lime-400/60 shadow-[0_8px_40px_rgba(163,230,53,0.25)]' : 'border-white/10'
+                tier.highlight
+                  ? 'border-violet-400/60 shadow-[0_10px_50px_rgba(139,92,246,0.25)]'
+                  : 'border-white/10'
               }`}
             >
               {tier.highlight && (
-                <div className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-lime-400/10 px-3 py-1 text-[10px] font-medium text-lime-300 ring-1 ring-lime-400/40">
+                <div className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-violet-400/10 px-3 py-1 text-[10px] font-medium text-violet-300 ring-1 ring-violet-400/40">
                   <Info className="h-3 w-3" /> Best value
                 </div>
               )}
@@ -101,15 +105,15 @@ export default function PricingFAQ() {
               </div>
               <ul className="mt-4 space-y-2 text-sm">
                 {tier.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-white/80">
-                    <Check className="h-4 w-4 text-lime-300" /> {f}
+                  <li key={f} className="flex items-center gap-2 text-white/85">
+                    <Check className="h-4 w-4 text-violet-300" /> {f}
                   </li>
                 ))}
               </ul>
               <button
                 className={`mt-6 w-full rounded-xl px-4 py-3 text-sm font-medium transition ${
                   tier.highlight
-                    ? 'bg-gradient-to-r from-lime-400 to-emerald-400 text-black shadow-[0_8px_30px_rgba(163,230,53,0.35)]'
+                    ? 'bg-gradient-to-r from-[#6A0DAD] to-[#8B5CF6] text-white shadow-[0_10px_40px_rgba(139,92,246,0.35)]'
                     : 'border border-white/10 bg-white/5 text-white/90 hover:bg-white/10'
                 }`}
               >
@@ -132,6 +136,27 @@ export default function PricingFAQ() {
               <FAQItem key={i.q} q={i.q} a={i.a} />
             ))}
           </div>
+        </div>
+
+        {/* CTA Banner */}
+        <div className="relative mx-auto mt-16 max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#6A0DAD]/30 to-[#8B5CF6]/30 p-6 text-center backdrop-blur">
+          <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.6),transparent_60%)] blur-2xl" />
+          <h4 className="text-xl font-semibold">AI-driven contract clarity for everyone.</h4>
+          <p className="mt-2 text-sm text-white/80">Sign up to get early access and product updates.</p>
+          <form className="mx-auto mt-4 flex max-w-md gap-2">
+            <input
+              type="email"
+              required
+              placeholder="you@company.com"
+              className="flex-1 rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/50 outline-none backdrop-blur focus:ring-2 focus:ring-violet-400/50"
+            />
+            <button
+              type="submit"
+              className="rounded-xl bg-gradient-to-r from-[#6A0DAD] to-[#8B5CF6] px-4 py-3 text-sm font-medium text-white shadow-[0_10px_40px_rgba(139,92,246,0.35)]"
+            >
+              Sign up
+            </button>
+          </form>
         </div>
       </div>
     </section>

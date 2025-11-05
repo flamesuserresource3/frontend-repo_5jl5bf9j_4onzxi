@@ -1,33 +1,33 @@
 import React, { useRef } from 'react';
 import Hero from './components/Hero';
-import HowItWorks from './components/HowItWorks';
+import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import PricingFAQ from './components/PricingFAQ';
 
 export default function App() {
-  const howItWorksRef = useRef(null);
+  const featuresRef = useRef(null);
 
-  const handleCTAClick = () => {
-    // Smooth scroll to how it works for this demo; in product, this would open file picker
-    howItWorksRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handlePrimary = () => {
+    // Demo: scroll to features; in product this would start signup or open file picker
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const handleHowItWorksClick = () => {
-    howItWorksRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleSecondary = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0b10] text-white">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0a0b10]/60 backdrop-blur">
+    <div className="min-h-screen bg-[#0A0A0A] text-white">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0A0A0A]/70 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-2">
-            <span className="h-6 w-6 rounded-md bg-gradient-to-br from-lime-400 to-emerald-500 shadow-[0_0_20px_2px_rgba(163,230,53,0.6)]" />
+            <span className="h-6 w-6 rounded-md bg-gradient-to-br from-[#6A0DAD] to-[#8B5CF6] shadow-[0_0_25px_rgba(139,92,246,0.6)]" />
             <span className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-sm font-semibold tracking-wide text-transparent">
               AGBklar
             </span>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
-            <a href="#how-it-works" className="hover:text-white">How it works</a>
+            <a href="#features" className="hover:text-white">Features</a>
             <a href="#testimonials" className="hover:text-white">Testimonials</a>
             <a href="#pricing" className="hover:text-white">Pricing</a>
           </nav>
@@ -36,21 +36,24 @@ export default function App() {
       </header>
 
       <main className="pt-16">
-        <Hero onCTAClick={handleCTAClick} onHowItWorksClick={handleHowItWorksClick} />
-        <div ref={howItWorksRef}>
-          <HowItWorks />
+        <Hero onPrimary={handlePrimary} onSecondary={handleSecondary} />
+        <div ref={featuresRef} id="features">
+          <Features />
         </div>
         <Testimonials />
-        <div id="pricing">
-          <PricingFAQ />
-        </div>
+        <PricingFAQ />
       </main>
 
-      <footer className="border-t border-white/10 bg-[#0a0b10] py-10 text-center text-xs text-white/60">
+      <footer className="border-t border-white/10 bg-[#0A0A0A] py-10 text-center text-xs text-white/60">
         <div className="mx-auto max-w-7xl px-6">
-          <p>
-            © {new Date().getFullYear()} AGBklar. Built for clarity — dark, neon, and fast.
-          </p>
+          <p>© {new Date().getFullYear()} AGBklar. Futuristic Neon AI Dashboard.</p>
+          <div className="mt-3 flex items-center justify-center gap-4">
+            <a className="hover:text-white" href="#">Privacy</a>
+            <span className="h-1 w-1 rounded-full bg-white/20" />
+            <a className="hover:text-white" href="#">Terms</a>
+            <span className="h-1 w-1 rounded-full bg-white/20" />
+            <a className="hover:text-white" href="#">Contact</a>
+          </div>
         </div>
       </footer>
     </div>
