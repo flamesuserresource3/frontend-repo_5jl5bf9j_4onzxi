@@ -20,14 +20,14 @@ export default function Hero({ onPrimary, onSecondary }) {
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 pt-28 text-center md:pt-36">
         <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs text-white/80 backdrop-blur">
           <span className="h-2 w-2 animate-pulse rounded-full bg-violet-400 shadow-[0_0_20px_2px_rgba(167,139,250,0.9)]" />
-          Futuristic AI contract insights
+          New: Neon dashboard theme
         </span>
 
-        <h1 className="max-w-4xl bg-gradient-to-br from-white via-white to-violet-300 bg-clip-text text-4xl font-semibold leading-tight text-transparent md:text-6xl md:leading-[1.08]">
-          AGBklar – Make sense of legalese in seconds
+        <h1 className="max-w-5xl bg-gradient-to-br from-white via-white to-violet-300 bg-clip-text text-4xl font-semibold leading-tight text-transparent md:text-6xl md:leading-[1.08]">
+          AGBklar — Futuristic Neon AI Dashboard for Contracts
         </h1>
         <p className="mt-5 max-w-2xl text-base text-white/70 md:text-lg">
-          Upload your terms and conditions and get a clean, prioritized summary with risk flags. Built for speed, privacy, and clarity.
+          Turn dense legal terms into actionable, prioritized insights with AI. Blazing fast, privacy-first, and built for teams.
         </p>
 
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
@@ -42,7 +42,7 @@ export default function Hero({ onPrimary, onSecondary }) {
             onClick={onSecondary}
             className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/80 backdrop-blur transition hover:bg-white/10"
           >
-            See features
+            Watch demo
           </button>
         </div>
 
@@ -55,7 +55,7 @@ export default function Hero({ onPrimary, onSecondary }) {
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
               <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
               <span className="ml-2 h-2 w-px bg-white/10" />
-              <span>AGBklar – Preview</span>
+              <span>AGBklar — Preview</span>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="col-span-2 rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.04] p-4">

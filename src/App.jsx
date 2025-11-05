@@ -7,12 +7,7 @@ import PricingFAQ from './components/PricingFAQ';
 export default function App() {
   const featuresRef = useRef(null);
 
-  const handlePrimary = () => {
-    // Demo: scroll to features; in product this would start signup or open file picker
-    featuresRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  const handleSecondary = () => {
+  const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -36,7 +31,7 @@ export default function App() {
       </header>
 
       <main className="pt-16">
-        <Hero onPrimary={handlePrimary} onSecondary={handleSecondary} />
+        <Hero onPrimary={scrollToFeatures} onSecondary={scrollToFeatures} />
         <div ref={featuresRef} id="features">
           <Features />
         </div>
